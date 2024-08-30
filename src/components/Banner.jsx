@@ -6,6 +6,9 @@ import bannerC from '/banner/banner03.jpg'
 import bannerD from '/banner/banner04.jpg'
 import Img from '../layer/Img'
 import Slider from 'react-slick'
+import { TbTruckDelivery } from 'react-icons/tb'
+import { IoReloadOutline } from 'react-icons/io5'
+import Add1 from  '../components/Add1'
 
 const Banner = () => {
 
@@ -69,6 +72,21 @@ const Banner = () => {
           </Slider>
         </div>
       </Container>
+      <div>
+        <Container className="flex justify-between">
+          <div className='flex items-center text-center'>
+            <p className='font-DM text-[#6D6D6D]'><span className='text-[#262626] text-2xl font-bold mr-2'>2</span>Two years warranty</p>
+          </div>
+          <div className='flex items-center gap-2'>
+          <TbTruckDelivery />
+          <p className='font-DM text-[#6D6D6D]'>Free shipping</p>
+          </div>
+          <div className='flex items-center gap-2'>
+          <IoReloadOutline />
+          <p className='font-DM text-[#6D6D6D]'>Return policy in 30 days</p>
+          </div>
+        </Container>
+      </div>
     </div>
   )
 }
