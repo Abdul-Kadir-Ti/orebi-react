@@ -26,7 +26,7 @@ const Navber = () => {
     <Img src={Logo} />
     <ul className={`w-full gap-x-10 justify-center absolute md:static md:flex z-50 top-full right-0 p-3 md:p-0 text-white text-right bg-[#eeeeee] md:bg-transparent transition-all duration-300 ${open ? "opacity-100 visible" : "opacity-0 invisible"}`}>
     <Li className="text-[#262626]" listItem="Home" />
-    <Li listItem="Shop" />
+    <Li to={"/prodect"} listItem="Shop" />
     <Li listItem="About" />
     <Li listItem="Contacts" />
     <Li listItem="Journal" />

@@ -8,7 +8,6 @@ import Img from '../layer/Img'
 import Slider from 'react-slick'
 import { TbTruckDelivery } from 'react-icons/tb'
 import { IoReloadOutline } from 'react-icons/io5'
-import Add1 from  '../components/Add1'
 
 const Banner = () => {
 
@@ -41,16 +40,47 @@ const Banner = () => {
       </div>
     ),
     customPaging: i => (
-      <div className={`text-[10px] flex items-center border-r-2 ${ i==active? "border-[#262626] text-[#262626]" : "text-transparent border-white" }`}
+      <div className={`text-[10px] flex items-center border-r-2 ${ i==active? "border-[#262626] text-[#262626]" : "text-transparent border-[#cccbcb]" }`}
         style={{
-          width: "22px",
-          height:'30px',
+          width: "15px",
+          height:'20px',
         }}
       >
         0{i + 1}
       </div>
     ),
-  
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          appendDots: dots => (
+            <div
+              style={{
+                borderRadius: "0px",
+                padding: "0px",
+                position: "absolute",
+                right:"50%",
+                bottom:"20px",
+                transform:"translateX(50%)",
+      
+              }}
+            >
+              <ul className='flex ' style={{ margin: "0px" }}> {dots} </ul>
+            </div>
+          ),
+          customPaging: i => (
+            <div className={`text-[10px] flex justify-center items-center border-b-2 ${ i==active? "border-[#262626] text-[#262626]" : "text-transparent border-white" }`}
+              style={{
+                width: "22px",
+                height:'30px',
+              }}
+            >
+              0{i + 1}
+            </div>
+          ),
+        }
+      },
+    ]
   };
   return (
     <div>
@@ -73,17 +103,17 @@ const Banner = () => {
         </div>
       </Container>
       <div>
-        <Container className="flex justify-between">
+        <Container className="flex justify-between px-3 md:px-0">
           <div className='flex items-center text-center'>
-            <p className='font-DM text-[#6D6D6D]'><span className='text-[#262626] text-2xl font-bold mr-2'>2</span>Two years warranty</p>
+            <p className='font-DM text-[8px] md:text-[16px] text-[#6D6D6D]'><span className='text-[#262626] text-sm md:text-2xl font-bold mr-2'>2</span>Two years warranty</p>
           </div>
           <div className='flex items-center gap-2'>
           <TbTruckDelivery />
-          <p className='font-DM text-[#6D6D6D]'>Free shipping</p>
+          <p className='font-DM text-[8px] md:text-[16px] text-[#6D6D6D]'>Free shipping</p>
           </div>
           <div className='flex items-center gap-2'>
           <IoReloadOutline />
-          <p className='font-DM text-[#6D6D6D]'>Return policy in 30 days</p>
+          <p className='font-DM text-[8px] md:text-[16px] text-[#6D6D6D]'>Return policy in 30 days</p>
           </div>
         </Container>
       </div>
